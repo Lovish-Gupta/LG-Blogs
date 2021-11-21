@@ -1,0 +1,13 @@
+<%- include("partials/header") %> 
+<div style="display: flex;">
+    <h1 style="flex-grow: 1;"><%= postTitle %> </h1>
+    <form action="/edit" method="post">
+        <button type="submit" class="btn btn-primary" name="edit" value="<%= postTitle %>" style="margin-left: 10px; float: right; height: 35px; margin-top: 20px;">edit</button>
+    </form>
+    <form action="/delete" method="post">
+        <button type="submit" class="btn btn-danger" name="delete" value="<%= postTitle %>" style="margin-left: 5px; float: right; height: 35px; margin-top: 20px;">delete</button>
+    </form>
+</div>
+<p style="word-wrap: break-word;"><%- postBody %> </p>
+<p style="word-wrap: break-word; overflow: visible;"><pre><code><%- postCode %></code></pre></p>
+<%- include("partials/footer") %> 

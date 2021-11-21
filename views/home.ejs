@@ -1,0 +1,17 @@
+<%- include("partials/header"); %> 
+
+<h1>Home</h1>
+
+<p><%= firstDay %> </p>
+
+<% journals.forEach(post => { %>
+    
+    <h2 style="word-wrap: break-word;"><a style="color: rgb(19, 18, 18);" href="/posts/<%= post.title %> "><%= post.title %></a></h2>
+    
+    <% if(post.body.length > 100){ %>
+        <p><%- post.body.slice(0,100) %>...<a href="/posts/<%= post.title %> "> Read more</a></p>
+    <% }else{ %> 
+        <p><%- post.body %> </p>
+    <% }}) %>
+
+<%- include("partials/footer"); %> 
